@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    server-->>browser: HTTP 201 Created
+    deactivate server
+
+    Note right of browser: The js file performs locally. It redraws the page with the new note. 
+    Note right of browser: After that it updates the server with a POST request setting the content-type in the header as application/json. 
+
